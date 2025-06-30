@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Hasil Analisis Foto</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Hasil Analisis Foto</h1>
+
+    <!-- Preview Gambar -->
+    <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Uploaded Image" class="preview">
+<div class="result">
+  <p><strong>Ketajaman:</strong> {{ sharpness }} (Skor: {{ sharpness_score }})</p>
+  <p><strong>Tingkat Noise:</strong> {{ noise }} (Skor: {{ noise_score }})</p>
+  <hr>
+  <p><strong>Kesimpulan:</strong> {{ conclusion }}</p>
+
+  <!-- Link Rekomendasi -->
+  {% if sharpness == 'Kabur' %}
+    <p>
+      <strong>Perbaikan Gambar:</strong><br>
+      <a href="https://picwish.com/id/unblur-image-portrait" target="_blank" style="color: yellow; text-decoration: underline;">
+        🔧 Klik di sini untuk meningkatkan kualitas foto Anda
+      </a>
+    </p>
+  {% elif sharpness == 'Tajam' %}
+    <p>
+      <strong>Optimasi Ukuran:</strong><br>
+      <a href="https://www.iloveimg.com/id/kompres-gambar" target="_blank" style="color: yellow; text-decoration: underline;">
+        🔧 Klik di sini untuk mengecilkan ukuran foto Anda
+      </a>
+    </p>
+  {% endif %}
+</div>
+
+
+    <a href="{{ url_for('index') }}"><button>Kembali</button></a>
+  </div>
+</body>
+</html>

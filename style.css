@@ -1,0 +1,117 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #163c74, #55637a);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* Container */
+.container {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 18px;
+  box-shadow: 0 8px 60px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+/* Judul */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #000000;
+}
+
+/* Form upload */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  align-items: center;
+}
+
+/* Input upload */
+input[type="file"] {
+  padding: 8px;
+  border: 2px dashed #969be4;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Tombol */
+button, input[type="submit"] {
+  background: #004d80;
+  color: white;
+  padding: 10px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-bottom: 10px;
+}
+
+button:hover, input[type="submit"]:hover {
+  background: #0066aa;
+}
+
+/* Gambar */
+img.preview {
+  max-width: 100%;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Hasil deteksi */
+.result {
+  margin-top: 25px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Link Rekomendasi */
+.result a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #f1f1f1;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid #ffffff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.result a:hover {
+  background-color: #004d80;
+  color: white;
+}
+
+.result a {
+  color: yellow;
+  font-weight: bold;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+  .container {
+    padding: 25px 20px;
+  }
+}
